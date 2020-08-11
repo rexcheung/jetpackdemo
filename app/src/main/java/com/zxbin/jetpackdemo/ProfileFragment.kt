@@ -31,8 +31,8 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        loginViewModel = ViewModelProvider(activity as NavActivity).get(LoginViewModel::class.java)
-        loginViewModel = activityViewModels<LoginViewModel>().value
+        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+//        loginViewModel = activityViewModels<LoginViewModel>().value
         loginViewModel?.userLive?.observe(viewLifecycleOwner, Observer {
             if (TextUtils.isEmpty(it)) {
                 tv_hello.text = "- -"

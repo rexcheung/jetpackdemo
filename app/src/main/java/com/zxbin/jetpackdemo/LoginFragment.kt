@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.zxbin.jetpackdemo.bean.LoginViewModel
@@ -28,7 +29,8 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loginViewModel = activityViewModels<LoginViewModel>().value
+        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+//        loginViewModel = activityViewModels<LoginViewModel>().value
 
         btn_login.setOnClickListener {
             val username = et_username.text.toString()
@@ -40,6 +42,11 @@ class LoginFragment : Fragment() {
                 findNavController().popBackStack()
             }
         }
+
+        val ld = MutableLiveData<String>()
+        ld.observe()
+
+
 
     }
 }
