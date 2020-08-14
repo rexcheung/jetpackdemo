@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -21,5 +22,8 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_profile.setOnClickListener { findNavController().navigate(R.id.action_mainfragment_to_profilefragment) }
+
+        btn_room.setOnClickListener { findNavController().navigate(R.id.action_firstfragment_to_room_fragment) }
+
     }
 }

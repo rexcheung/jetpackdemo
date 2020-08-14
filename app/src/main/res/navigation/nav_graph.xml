@@ -22,6 +22,8 @@
         <action
             android:id="@+id/action_firstfragment_to_third_fragment"
             app:destination="@id/ThirdFragment" />
+
+
     </fragment>
 
     <fragment
@@ -43,5 +45,6 @@
         android:id="@+id/ThirdFragment"
         android:name="com.zxbin.jetpackdemo.ThirdFragment"
         android:label="ThirdFragment"
-        tools:layout="@layout/fragment_third"></fragment>
+        tools:layout="@layout/fragment_third"/>
+
 </navigation>

@@ -44,7 +44,6 @@ class LoginFragment : Fragment() {
         }
 
         val ld = MutableLiveData<String>()
-        ld.observe()
 
 
 
