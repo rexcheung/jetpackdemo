@@ -25,6 +25,14 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_firstfragment_to_viewpager"
+            app:destination="@id/fragment_viewpager"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -38,13 +46,23 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"></action>
+
+        <argument
+            android:name="arg_profile"
+            android:defaultValue="-2"
+            app:argType="integer" />
     </fragment>
 
     <fragment
         android:id="@+id/fragment_login"
         android:name="com.zxbin.jetpackdemo.LoginFragment"
         tools:layout="@layout/fragment_login">
+
+        <argument
+            android:name="arg_login"
+            android:defaultValue="-99"
+            app:argType="integer" />
 
     </fragment>
 
@@ -53,5 +71,28 @@
         android:name="com.zxbin.jetpackdemo.RoomFragment"
         android:label="RoomFragment"
         tools:layout="@layout/fragment_room" />
+
+    <fragment
+        android:id="@+id/fragment_viewpager"
+        android:name="com.zxbin.jetpackdemo.ViewPagerFragment"
+        tools:layout="@layout/fragment_viewpager_home">
+
+        <action
+            android:id="@+id/action_viewpager_to_profile"
+            app:destination="@id/fragment_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_viewpager_to_room"
+            app:destination="@id/RoomFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
 
 </navigation>

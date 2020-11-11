@@ -42,7 +42,10 @@ class ProfileFragment : Fragment() {
         })
 
         btn_login.setOnClickListener {
-            findNavController().navigate(R.id.action_profile_to_login)
+//            findNavController().navigate(R.id.action_profile_to_login)
+
+            val action = ProfileFragmentDirections.actionProfileToLogin(123)
+            findNavController().navigate(action)
         }
 
     }

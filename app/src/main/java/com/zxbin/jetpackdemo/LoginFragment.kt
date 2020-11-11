@@ -2,6 +2,7 @@ package com.zxbin.jetpackdemo
 
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.zxbin.jetpackdemo.bean.LoginViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -45,6 +47,11 @@ class LoginFragment : Fragment() {
 
         val ld = MutableLiveData<String>()
 
+        val navArgs: ProfileFragmentArgs by navArgs()
+        arguments?.apply {
+            val argLogin = LoginFragmentArgs.fromBundle(this).argLogin
+            Toast.makeText(context, argLogin.toString(), Toast.LENGTH_SHORT).show()
+        }
 
 
     }

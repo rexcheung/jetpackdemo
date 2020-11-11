@@ -44,7 +44,6 @@ class RoomFragment : Fragment(), View.OnClickListener {
                 .loadAllUser()
 
             Log.i("123", "" + users.size)
-//            Toast.makeText(requireContext(), "size = ${users.size}", Toast.LENGTH_SHORT).show()
         }).start()
     }
 
