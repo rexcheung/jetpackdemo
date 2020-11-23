@@ -29,4 +29,10 @@
         android:layout_height="wrap_content"
         android:text="ViewPager" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btn_result"
+        android:text="Result"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>
